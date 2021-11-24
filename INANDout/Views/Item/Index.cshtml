@@ -1,0 +1,53 @@
+﻿@model IEnumerable<INANDout.Models.item>
+
+<div class="container b-3">
+    <div class="container pt-4" >
+        <div class="container col-6" >
+            <h2 class="text-primary">Borred Item List </h2>
+            
+        </div>
+        <div class="col-6">
+            Creat New Item
+        </div>
+
+    </div>
+    <br />
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped"style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Item Name
+                    </th>
+                    <th>
+                        Browerr
+                    </th>
+                    <th>
+                        Lender
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td width="30%"></td>
+                    <td width="30%">@item.Borrower</td>
+                    <td width="30%">@item.Id</td>
+
+                </tr>
+
+                }
+            </tbody>
+
+        </table>
+    }
+    else
+    {
+            <p>No Item Created Yet </p>
+    }
+
+    
+   
+</div>
